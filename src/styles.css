@@ -1,0 +1,47 @@
+:root {
+  --bg: #061018;
+  --bg-2: #0b1c2a;
+  --bg-soft: #102433;
+  --line: rgba(232, 220, 196, 0.14);
+  --text: #f3eee4;
+  --muted: rgba(243, 238, 228, 0.68);
+  --quiet: rgba(243, 238, 228, 0.42);
+  --accent: #e8b86d;
+  --accent-2: #3dcf7a;
+  --led: #ff3b3b;
+  --wa: #25d366;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+  --max: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--sans);
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(232, 184, 109, 0.16), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 5%, rgba(61, 207, 122, 0.1), transparent 50%),
+    linear-gradient(180deg, #040b12 0%, var(--bg) 40%, #081520 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}

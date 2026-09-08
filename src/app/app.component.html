@@ -1,0 +1,221 @@
+<div class="page">
+  <header class="nav" [class.nav--solid]="scrolled">
+    <a class="nav__brand" href="#top">{{ site.brand }}</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#looks">Looks</a>
+      <a href="#layouts">Layouts</a>
+      <a href="#features">Features</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#night">Night mode</a>
+      <a href="#order" class="nav__cta">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="brand-mark">{{ site.brand }}</p>
+        <h1>{{ site.tagline }}</h1>
+        <p class="lede">
+          Prayer times, Hijri date, and a calm night mode — built to hang in your living room or bedroom,
+          glanceable from across the room.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn--wa" [href]="wa" target="_blank" rel="noopener noreferrer">
+            Message on WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="#looks">See real screens</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__glow"></div>
+        <figure class="shot shot--hero">
+          <img
+            src="screenshots/day-navy.png"
+            width="1440"
+            height="810"
+            alt="Home Prayer Times day mode display with navy clock"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="looks">
+      <div class="section-head">
+        <h2>Real screens — day &amp; night</h2>
+        <p>
+          Actual captures from the display. Daytime for the living room; LED red, green, amber, and teal for the bedroom.
+        </p>
+      </div>
+      <div class="looks">
+        @for (look of looks; track look.id) {
+          <article class="look">
+            <figure class="shot">
+              <img [src]="look.src" [alt]="look.label + ' screenshot'" width="1440" height="810" loading="lazy" />
+            </figure>
+            <h3>{{ look.label }}</h3>
+            <p>{{ look.caption }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="band band--tight" id="layouts">
+      <div class="section-head">
+        <h2>Landscape or vertical</h2>
+        <p>
+          Choose in Settings — automatic (follows screen orientation), always landscape for the wall,
+          or portrait for a stacked clock-on-top layout.
+        </p>
+      </div>
+      <div class="layouts">
+        @for (layout of layouts; track layout.id) {
+          <article class="layout">
+            <figure class="shot" [class.shot--portrait]="layout.portrait">
+              <img
+                [src]="layout.src"
+                [alt]="layout.title + ' layout screenshot'"
+                [width]="layout.portrait ? 810 : 1440"
+                [height]="layout.portrait ? 1440 : 810"
+                loading="lazy"
+              />
+            </figure>
+            <h3>{{ layout.title }}</h3>
+            <p>{{ layout.body }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="band band--tight" id="features">
+      <div class="section-head">
+        <h2>Everything on one screen</h2>
+        <p>Designed so guests and kids can read it without opening an app.</p>
+      </div>
+      <ul class="features">
+        @for (f of features; track f.title) {
+          <li>
+            <h3>{{ f.title }}</h3>
+            <p>{{ f.body }}</p>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <section class="night" id="night">
+      <div class="night__copy">
+        <h2>Night mode that respects the room</h2>
+        <p>
+          After sunset the display can fade into a dark palette — automatic, always on, or off.
+          Pick amber for warmth, LED red for that classic digital clock glow, or green for a softer night read.
+        </p>
+        <ul>
+          <li>Automatic sunset → sunrise</li>
+          <li>Color choices for day and night</li>
+          <li>Smooth fade when day and night swap</li>
+        </ul>
+      </div>
+      <div class="night__pair">
+        <figure class="shot">
+          <img src="screenshots/night-led-red.png" alt="Night mode LED red" width="1440" height="810" loading="lazy" />
+          <figcaption>LED red</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="screenshots/night-green.png" alt="Night mode green" width="1440" height="810" loading="lazy" />
+          <figcaption>Green</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="mount-story">
+      <div class="mount-story__frame">
+        <div class="room">
+          <div class="room__wall"></div>
+          <div class="room__display">
+            <figure class="shot shot--hero">
+              <img
+                src="screenshots/night-amber.png"
+                alt="Night amber display as if mounted on a wall"
+                width="1440"
+                height="810"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+          <p class="room__note">Imagine it mounted above a dresser or beside the living-room sofa.</p>
+        </div>
+      </div>
+      <div class="mount-story__copy">
+        <h2>Made for the wall</h2>
+        <p>
+          Pair a small screen or monitor with a Raspberry Pi running the display as a kiosk —
+          prayer times keep working offline, so the board stays up even when Wi‑Fi drops.
+        </p>
+      </div>
+    </section>
+
+    <section class="band hardware" id="hardware">
+      <div class="section-head">
+        <h2>What you’ll need</h2>
+        <p>
+          A typical wall setup uses a Raspberry Pi, monitor, speakers, and basic mounting hardware.
+          Parts are easy to source from Micro Center, Home Depot, Amazon, and similar stores.
+        </p>
+      </div>
+      <div class="hardware__grid">
+        <div class="hardware__col">
+          <h3 class="hardware__heading">Required hardware</h3>
+          <ul class="hardware__list">
+            @for (item of hardwareRequired; track item.name) {
+              <li>
+                <span class="hardware__name">
+                  @if (item.href) {
+                    <a [href]="item.href" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+                  } @else {
+                    {{ item.name }}
+                  }
+                </span>
+                <span class="hardware__price">{{ item.price }}</span>
+                @if (item.note) {
+                  <span class="hardware__note">{{ item.note }}</span>
+                }
+              </li>
+            }
+          </ul>
+        </div>
+        <div class="hardware__col">
+          <h3 class="hardware__heading">Optional</h3>
+          <ul class="hardware__list">
+            @for (item of hardwareOptional; track item.name) {
+              <li>
+                <span class="hardware__name">{{ item.name }}</span>
+                <span class="hardware__price">{{ item.price }}</span>
+              </li>
+            }
+          </ul>
+          <p class="hardware__total">
+            <strong>Example total (parts only)</strong><br />
+            Total material cost: {{ materialsTotal }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="order" id="order">
+      <h2>Want one for your home?</h2>
+      <p>
+        Reach out on WhatsApp — ask about setup, colors, night mode, or mounting ideas.
+        Happy to walk you through what you’ll see on the wall.
+      </p>
+      <a class="btn btn--wa btn--lg" [href]="wa" target="_blank" rel="noopener noreferrer">
+        Chat on WhatsApp
+      </a>
+      <p class="order__hint">Opens WhatsApp with a short intro message ready to send.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>{{ site.brand }}</span>
+    <a [href]="wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </footer>
+</div>
