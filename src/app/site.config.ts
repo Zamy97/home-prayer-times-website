@@ -60,6 +60,27 @@ export type WallShot = {
  */
 export const WALL_SHOTS: WallShot[] = [
   {
+    id: 'corner-two-wall',
+    label: 'High mount · two-wall corner',
+    caption: 'Tucked into the ceiling corner where both walls meet.',
+    src: 'walls/clean-corner-two-wall-day.png',
+    group: 'corner',
+  },
+  {
+    id: 'corner-day-living',
+    label: 'High mount · day living room',
+    caption: 'Near the ceiling above the sofa — day mode, clean install.',
+    src: 'walls/clean-corner-day-living.png',
+    group: 'corner',
+  },
+  {
+    id: 'corner-day-bright',
+    label: 'High mount · bright day',
+    caption: 'Looking up from the room in daylight — no cables.',
+    src: 'walls/clean-corner-day-bright.png',
+    group: 'corner',
+  },
+  {
     id: 'corner-day',
     label: 'High mount · day',
     caption: 'Near the ceiling — easy to read looking up from the room.',

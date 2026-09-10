@@ -124,4 +124,8 @@
   </section>
 </main>
 
-<app-lightbox [item]="lightbox" (closed)="closeLightbox()" />
+<app-lightbox
+  [items]="lightboxItems"
+  [startIndex]="lightboxStart"
+  (closed)="closeLightbox()"
+/>

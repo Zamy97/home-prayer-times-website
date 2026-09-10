@@ -15,16 +15,25 @@ export class HomePage {
   readonly features = FEATURES;
   readonly walls = WALL_SHOTS;
   readonly wa = whatsappUrl();
-  readonly hero = WALL_SHOTS.find((s) => s.id === 'home-day') ?? WALL_SHOTS[0];
+  readonly hero = WALL_SHOTS.find((s) => s.id === 'corner-day-living') ?? WALL_SHOTS[0];
   readonly mosaic = WALL_SHOTS.slice(0, 6);
 
-  lightbox: LightboxItem | null = null;
+  readonly browseAll: LightboxItem[] = WALL_SHOTS.map((s) => ({
+    src: s.src,
+    label: s.label,
+    caption: s.caption,
+  }));
+
+  lightboxItems: LightboxItem[] = [];
+  lightboxStart = 0;
 
   openShot(shot: WallShot): void {
-    this.lightbox = { src: shot.src, label: shot.label, caption: shot.caption };
+    const i = this.browseAll.findIndex((item) => item.src === shot.src);
+    this.lightboxItems = this.browseAll;
+    this.lightboxStart = i >= 0 ? i : 0;
   }
 
   closeLightbox(): void {
-    this.lightbox = null;
+    this.lightboxItems = [];
   }
 }
