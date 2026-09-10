@@ -56,51 +56,49 @@ export type WallShot = {
 };
 
 /**
- * Wall lifestyle images.
- * "home" group uses the original real-install photos (authentic look).
- * "rooms" group uses clean lifestyle scenes for living / dining / bedroom.
+ * Wall lifestyle images — real display UI kept, room cleaned up for marketing.
  */
 export const WALL_SHOTS: WallShot[] = [
   {
     id: 'home-day',
-    label: 'Real home · day',
-    caption: 'Day mode on the wall — how it actually looks in the house.',
-    src: 'walls/original-day.jpg',
+    label: 'Living room · day',
+    caption: 'Your real day-mode display, in a clean living-room setting.',
+    src: 'walls/clean-home-day.png',
     group: 'home',
   },
   {
     id: 'home-green',
-    label: 'Real home · night green',
-    caption: 'Night green accent on the same wall mount.',
-    src: 'walls/original-green.png',
+    label: 'Evening · night green',
+    caption: 'Same mounted display with a soft green night accent.',
+    src: 'walls/clean-home-green.png',
     group: 'home',
   },
   {
     id: 'home-teal',
-    label: 'Real home · night teal',
-    caption: 'Teal night mode — same install, different color.',
-    src: 'walls/original-teal.jpg',
+    label: 'Hallway · night teal',
+    caption: 'Teal night mode on a tidy wall — no clutter.',
+    src: 'walls/clean-home-teal.png',
     group: 'home',
   },
   {
-    id: 'living-wide',
-    label: 'Living room',
-    caption: 'Mounted above a console — readable from the sofa.',
-    src: 'walls/real-feel-living-wide.png',
+    id: 'living-sofa',
+    label: 'Living room · sofa view',
+    caption: 'Glanceable from across the couch.',
+    src: 'walls/clean-living-sofa.png',
     group: 'rooms',
   },
   {
-    id: 'dining-wide',
+    id: 'dining-day',
     label: 'Dining room',
     caption: 'At the end of the table for the whole family.',
-    src: 'walls/real-feel-dining-wide.png',
+    src: 'walls/clean-dining-day.png',
     group: 'rooms',
   },
   {
     id: 'bedroom-amber',
     label: 'Bedroom · amber',
     caption: 'Warm night mode that doesn’t flood the room.',
-    src: 'walls/real-feel-bedroom-amber.png',
+    src: 'walls/clean-bedroom-amber.png',
     group: 'rooms',
   },
 ];
