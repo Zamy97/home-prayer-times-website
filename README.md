@@ -1,6 +1,9 @@
 # Home Prayer Times — marketing site
 
-Static Angular landing page for the **Home Prayer Times** wall display. Deployable to Vercel.
+Two-page Angular landing site for the **Home Prayer Times** wall display.
+
+- **`/`** — Apple-style product story (full-bleed hero, day/night features, wall mosaic)
+- **`/on-the-wall`** — Wall-mount gallery, real screens, hardware list, WhatsApp CTA
 
 ## Setup
 
@@ -26,32 +29,12 @@ npm run build
 
 Output: `dist/home-prayer-times-website/browser`
 
-## Screenshots
+## Assets
 
-Real captures from the Home Prayer Times Display live under `public/screenshots/`.
-
-To refresh them (display build must be served, e.g. on port 4177):
-
-```bash
-# from Home_Prayer_Times_Display
-npm run build
-cd dist/home-prayer-times-display/browser && python3 -m http.server 4177 --bind 127.0.0.1
-
-# from this repo
-python3 scripts/capture-screenshots.py
-```
+- Real UI captures: `public/screenshots/`
+- Wall lifestyle images: `public/walls/`
 
 ## Deploy to Vercel
 
-- Import this repo / folder in Vercel
-- Framework preset can stay **Other** (`vercel.json` is already set)
-- Build command: `npm run build`
-- Output directory: `dist/home-prayer-times-website/browser`
-
-## What’s on the page
-
-- Brand-first hero with a real day-mode screenshot
-- Lookbook: day navy/green + night LED red, green, amber, teal
-- Feature list and night-mode story
-- “Mounted on the wall” room mockup using a real night screenshot
-- WhatsApp CTAs throughout
+- Import [Zamy97/home-prayer-times-website](https://github.com/Zamy97/home-prayer-times-website)
+- `vercel.json` already sets build + output directory

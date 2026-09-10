@@ -1,0 +1,117 @@
+<main class="home">
+  <section class="hero" id="top">
+    <div class="hero__media" aria-hidden="false">
+      <img
+        [src]="hero.src"
+        width="1600"
+        height="900"
+        alt="Home Prayer Times wall-mounted in a living room"
+        fetchpriority="high"
+      />
+      <div class="hero__veil"></div>
+    </div>
+    <div class="hero__copy">
+      <p class="hero__brand reveal">{{ site.brand }}</p>
+      <h1 class="reveal reveal--delay">{{ site.tagline }}</h1>
+      <p class="hero__lede reveal reveal--delay-2">
+        Prayer times, Hijri date, and a calm night mode — glanceable from across the room.
+      </p>
+      <div class="hero__cta reveal reveal--delay-3">
+        <a class="btn btn--primary" [href]="wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+        <a class="btn btn--ghost" routerLink="/on-the-wall">See it on the wall</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <h2 class="statement__title">Designed to hang.<br />Built to stay on.</h2>
+    <p class="statement__body">
+      A dedicated prayer display for the living room or bedroom — not another phone app.
+      Large type, soft night colors, and offline prayer times on a Raspberry Pi.
+    </p>
+  </section>
+
+  <section class="feature-strip">
+    <div class="feature-strip__shot">
+      <img
+        src="walls/wall-living-green.png"
+        width="1600"
+        height="900"
+        alt="Green day mode mounted on a living-room wall"
+        loading="lazy"
+      />
+    </div>
+    <div class="feature-strip__copy">
+      <h2>Daylight clarity</h2>
+      <p>
+        Navy or green accents on a bright panel — so guests and kids can read Fajr through Isha
+        without opening anything.
+      </p>
+    </div>
+  </section>
+
+  <section class="feature-strip feature-strip--flip feature-strip--dark">
+    <div class="feature-strip__shot">
+      <img
+        src="walls/wall-bedroom-amber.png"
+        width="1600"
+        height="900"
+        alt="Amber night mode mounted in a bedroom"
+        loading="lazy"
+      />
+    </div>
+    <div class="feature-strip__copy">
+      <h2>Night that respects the room</h2>
+      <p>
+        After sunset it can fade to amber, LED red, green, or teal — automatic, always on, or off.
+      </p>
+    </div>
+  </section>
+
+  <section class="grid-story">
+    <div class="grid-story__head">
+      <h2>On your wall</h2>
+      <p>Living room by day. Bedroom by night. Landscape or portrait.</p>
+      <a class="text-link" routerLink="/on-the-wall">Browse the gallery →</a>
+    </div>
+    <div class="grid-story__mosaic">
+      @for (shot of walls.slice(0, 4); track shot.id) {
+        <figure class="mosaic" [class.mosaic--portrait]="shot.portrait">
+          <img [src]="shot.src" [alt]="shot.label" loading="lazy" />
+          <figcaption>{{ shot.label }}</figcaption>
+        </figure>
+      }
+    </div>
+  </section>
+
+  <section class="pillars">
+    <h2 class="pillars__title">Everything on one screen</h2>
+    <ul class="pillars__list">
+      @for (f of features; track f.title) {
+        <li>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.body }}</p>
+        </li>
+      }
+    </ul>
+  </section>
+
+  <section class="close">
+    <div class="close__media">
+      <img
+        src="walls/wall-bedroom-led.png"
+        width="1600"
+        height="900"
+        alt="LED red night mode on the bedroom wall"
+        loading="lazy"
+      />
+    </div>
+    <div class="close__copy">
+      <h2>Want one for your home?</h2>
+      <p>Ask about setup, colors, night mode, or mounting — happy to walk you through it.</p>
+      <a class="btn btn--primary btn--lg" [href]="wa" target="_blank" rel="noopener noreferrer">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+</main>

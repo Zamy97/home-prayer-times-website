@@ -25,7 +25,7 @@ export const FEATURES: Feature[] = [
   },
   {
     title: 'Five daily prayers',
-    body: 'Fajr through Isha highlighted as the next one approaches — and a short “it’s time” cue when adhan arrives.',
+    body: 'Fajr through Isha highlighted as the next one approaches — and a short cue when it’s time.',
   },
   {
     title: 'Hijri & Gregorian',
@@ -37,15 +37,60 @@ export const FEATURES: Feature[] = [
   },
   {
     title: 'Night mode',
-    body: 'Automatic after sunset, always on, or off. Soft amber, LED red, green, and more for reading in the dark.',
+    body: 'Automatic after sunset, always on, or off. Soft amber, LED red, green, teal, and more.',
   },
   {
     title: 'Runs offline',
     body: 'Prayer times are calculated on the device. Ideal for a Raspberry Pi kiosk that stays on all day.',
   },
+];
+
+export type WallShot = {
+  id: string;
+  label: string;
+  caption: string;
+  src: string;
+  portrait?: boolean;
+};
+
+/** Lifestyle wall-mount images for the product story. */
+export const WALL_SHOTS: WallShot[] = [
   {
-    title: 'Landscape or portrait',
-    body: 'Hang it wide like a living-room TV, or run vertical with clock on top and prayers stacked below — pick in Settings.',
+    id: 'living-day',
+    label: 'Living room · day',
+    caption: 'Hung at eye level — readable from across the sofa.',
+    src: 'walls/wall-living-day.png',
+  },
+  {
+    id: 'living-green',
+    label: 'Living room · green',
+    caption: 'Same calm day layout with a softer green accent.',
+    src: 'walls/wall-living-green.png',
+  },
+  {
+    id: 'bedroom-amber',
+    label: 'Bedroom · amber',
+    caption: 'Warm night mode that doesn’t flood the room with light.',
+    src: 'walls/wall-bedroom-amber.png',
+  },
+  {
+    id: 'bedroom-led',
+    label: 'Bedroom · LED red',
+    caption: 'Classic digital-clock glow for dark rooms.',
+    src: 'walls/wall-bedroom-led.png',
+  },
+  {
+    id: 'bedroom-teal',
+    label: 'Bedroom · teal',
+    caption: 'A cooler night option for a quieter glow.',
+    src: 'walls/wall-bedroom-teal.png',
+  },
+  {
+    id: 'portrait',
+    label: 'Hallway · portrait',
+    caption: 'Vertical layout for tall screens and narrow walls.',
+    src: 'walls/wall-portrait-hall.png',
+    portrait: true,
   },
 ];
 
@@ -59,63 +104,45 @@ export type Look = {
 export const LOOKS: Look[] = [
   {
     id: 'day',
-    label: 'Day mode · navy',
-    caption: 'Bright living-room display — navy clock, soft panel, full prayer grid.',
+    label: 'Day · navy',
+    caption: 'Bright living-room display.',
     src: 'screenshots/day-navy.png',
   },
   {
     id: 'day-green',
-    label: 'Day mode · green',
-    caption: 'Same day layout with a calmer green clock color.',
+    label: 'Day · green',
+    caption: 'Calmer green clock color.',
     src: 'screenshots/day-green.png',
   },
   {
     id: 'led-red',
     label: 'Night · LED red',
-    caption: 'Alarm-clock red that stays readable from across a dark bedroom.',
+    caption: 'Readable from across a dark bedroom.',
     src: 'screenshots/night-led-red.png',
   },
   {
     id: 'green',
     label: 'Night · green',
-    caption: 'A softer green accent for nighttime without flooding the room with light.',
+    caption: 'Softer night read.',
     src: 'screenshots/night-green.png',
   },
   {
     id: 'amber',
     label: 'Night · amber',
-    caption: 'Warm amber default — easy on the eyes while you wind down.',
+    caption: 'Warm default for winding down.',
     src: 'screenshots/night-amber.png',
   },
   {
     id: 'teal',
     label: 'Night · teal',
-    caption: 'Another night option for a cooler glow in the bedroom.',
+    caption: 'Cooler bedroom glow.',
     src: 'screenshots/night-teal.png',
-  },
-];
-
-export type LayoutOption = {
-  id: string;
-  title: string;
-  body: string;
-  src: string;
-  portrait?: boolean;
-};
-
-export const LAYOUTS: LayoutOption[] = [
-  {
-    id: 'landscape',
-    title: 'Landscape',
-    body: 'Wall display with the clock beside the prayer grid — best for living-room TVs and wide monitors.',
-    src: 'screenshots/day-navy.png',
   },
   {
     id: 'portrait',
-    title: 'Portrait / vertical',
-    body: 'Stacked layout: clock on top, prayers below, then sunrise/sunset and date. Great for vertical monitors or tall narrow screens.',
+    label: 'Portrait · day',
+    caption: 'Clock on top, prayers stacked below.',
     src: 'screenshots/portrait-day-navy.png',
-    portrait: true,
   },
 ];
 
