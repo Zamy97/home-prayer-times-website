@@ -56,16 +56,52 @@ export type WallShot = {
 /** Lifestyle wall-mount images for the product story. */
 export const WALL_SHOTS: WallShot[] = [
   {
+    id: 'living-sofa',
+    label: 'Living room · sofa view',
+    caption: 'Readable from across the couch — hung like a small TV.',
+    src: 'walls/wall-living-sofa.png',
+  },
+  {
     id: 'living-day',
     label: 'Living room · day',
-    caption: 'Hung at eye level — readable from across the sofa.',
+    caption: 'Clean wall mount at eye level for guests and family.',
     src: 'walls/wall-living-day.png',
   },
   {
     id: 'living-green',
     label: 'Living room · green',
-    caption: 'Same calm day layout with a softer green accent.',
+    caption: 'Same day layout with a calmer green accent.',
     src: 'walls/wall-living-green.png',
+  },
+  {
+    id: 'living-dusk',
+    label: 'Living room · dusk',
+    caption: 'Amber night mode as the room softens in the evening.',
+    src: 'walls/wall-living-dusk-amber.png',
+  },
+  {
+    id: 'living-bookshelf',
+    label: 'Living room · shelf niche',
+    caption: 'Tucked beside bookshelves — still glanceable from the room.',
+    src: 'walls/wall-living-bookshelf-green.png',
+  },
+  {
+    id: 'dining-day',
+    label: 'Dining room · day',
+    caption: 'Above a sideboard — easy to check before and after meals.',
+    src: 'walls/wall-dining-day.png',
+  },
+  {
+    id: 'dining-endwall',
+    label: 'Dining room · end wall',
+    caption: 'At the head of the table, readable for the whole family.',
+    src: 'walls/wall-dining-endwall.png',
+  },
+  {
+    id: 'dining-green',
+    label: 'Dining · open kitchen',
+    caption: 'Open-concept dining with a softer green day accent.',
+    src: 'walls/wall-dining-green.png',
   },
   {
     id: 'bedroom-amber',

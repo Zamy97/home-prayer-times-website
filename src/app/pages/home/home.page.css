@@ -290,12 +290,32 @@
 
 @media (min-width: 720px) {
   .grid-story__mosaic {
-    grid-template-columns: 1.35fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .mosaic:first-child {
+    grid-column: span 2;
+    min-height: 380px;
+  }
+
+  .mosaic:first-child img {
+    min-height: 380px;
+  }
+}
+
+@media (min-width: 980px) {
+  .grid-story__mosaic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mosaic:first-child {
+    grid-column: span 2;
     grid-row: span 2;
+    min-height: 100%;
+  }
+
+  .mosaic:first-child img {
+    min-height: 100%;
   }
 }
 

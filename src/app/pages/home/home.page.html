@@ -71,11 +71,11 @@
   <section class="grid-story">
     <div class="grid-story__head">
       <h2>On your wall</h2>
-      <p>Living room by day. Bedroom by night. Landscape or portrait.</p>
-      <a class="text-link" routerLink="/on-the-wall">Browse the gallery →</a>
+      <p>Living room. Dining room. Bedroom. See how it fits the spaces you already have.</p>
+      <a class="text-link" routerLink="/on-the-wall">Browse all rooms →</a>
     </div>
     <div class="grid-story__mosaic">
-      @for (shot of walls.slice(0, 4); track shot.id) {
+      @for (shot of walls.slice(0, 6); track shot.id) {
         <figure class="mosaic" [class.mosaic--portrait]="shot.portrait">
           <img [src]="shot.src" [alt]="shot.label" loading="lazy" />
           <figcaption>{{ shot.label }}</figcaption>
