@@ -18,12 +18,8 @@ import {
 export class GalleryPage {
   readonly site = SITE;
   readonly walls = WALL_SHOTS;
-  readonly livingDining = WALL_SHOTS.filter(
-    (s) => s.id.startsWith('living') || s.id.startsWith('dining')
-  );
-  readonly bedroomHall = WALL_SHOTS.filter(
-    (s) => s.id.startsWith('bedroom') || s.id === 'portrait'
-  );
+  readonly realHome = WALL_SHOTS.filter((s) => s.group === 'home');
+  readonly roomScenes = WALL_SHOTS.filter((s) => s.group === 'rooms');
   readonly looks = LOOKS;
   readonly hardwareRequired = HARDWARE_REQUIRED;
   readonly hardwareOptional = HARDWARE_OPTIONAL;

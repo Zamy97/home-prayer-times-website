@@ -51,82 +51,56 @@ export type WallShot = {
   caption: string;
   src: string;
   portrait?: boolean;
+  /** Gallery grouping */
+  group?: 'home' | 'rooms';
 };
 
-/** Lifestyle wall-mount images for the product story. */
+/**
+ * Wall lifestyle images — polished from a real home install + clean room scenes.
+ * Prefer these over older mockups for the marketing gallery.
+ */
 export const WALL_SHOTS: WallShot[] = [
   {
-    id: 'living-sofa',
-    label: 'Living room · sofa view',
-    caption: 'Readable from across the couch — hung like a small TV.',
-    src: 'walls/wall-living-sofa.png',
+    id: 'home-day',
+    label: 'Real home · day',
+    caption: 'An actual wall install — day mode, clean and glanceable.',
+    src: 'walls/real-wall-day-navy.png',
+    group: 'home',
   },
   {
-    id: 'living-day',
-    label: 'Living room · day',
-    caption: 'Clean wall mount at eye level for guests and family.',
-    src: 'walls/wall-living-day.png',
+    id: 'home-green',
+    label: 'Real home · night green',
+    caption: 'Same wall at night with a soft green accent.',
+    src: 'walls/real-wall-night-green.png',
+    group: 'home',
   },
   {
-    id: 'living-green',
-    label: 'Living room · green',
-    caption: 'Same day layout with a calmer green accent.',
-    src: 'walls/wall-living-green.png',
+    id: 'home-teal',
+    label: 'Real home · night teal',
+    caption: 'Teal night mode on the bedroom / hallway wall.',
+    src: 'walls/real-wall-night-teal.png',
+    group: 'home',
   },
   {
-    id: 'living-dusk',
-    label: 'Living room · dusk',
-    caption: 'Amber night mode as the room softens in the evening.',
-    src: 'walls/wall-living-dusk-amber.png',
+    id: 'living-wide',
+    label: 'Living room',
+    caption: 'Mounted above a console — readable from the sofa.',
+    src: 'walls/real-feel-living-wide.png',
+    group: 'rooms',
   },
   {
-    id: 'living-bookshelf',
-    label: 'Living room · shelf niche',
-    caption: 'Tucked beside bookshelves — still glanceable from the room.',
-    src: 'walls/wall-living-bookshelf-green.png',
-  },
-  {
-    id: 'dining-day',
-    label: 'Dining room · day',
-    caption: 'Above a sideboard — easy to check before and after meals.',
-    src: 'walls/wall-dining-day.png',
-  },
-  {
-    id: 'dining-endwall',
-    label: 'Dining room · end wall',
-    caption: 'At the head of the table, readable for the whole family.',
-    src: 'walls/wall-dining-endwall.png',
-  },
-  {
-    id: 'dining-green',
-    label: 'Dining · open kitchen',
-    caption: 'Open-concept dining with a softer green day accent.',
-    src: 'walls/wall-dining-green.png',
+    id: 'dining-wide',
+    label: 'Dining room',
+    caption: 'At the end of the table for the whole family.',
+    src: 'walls/real-feel-dining-wide.png',
+    group: 'rooms',
   },
   {
     id: 'bedroom-amber',
     label: 'Bedroom · amber',
-    caption: 'Warm night mode that doesn’t flood the room with light.',
-    src: 'walls/wall-bedroom-amber.png',
-  },
-  {
-    id: 'bedroom-led',
-    label: 'Bedroom · LED red',
-    caption: 'Classic digital-clock glow for dark rooms.',
-    src: 'walls/wall-bedroom-led.png',
-  },
-  {
-    id: 'bedroom-teal',
-    label: 'Bedroom · teal',
-    caption: 'A cooler night option for a quieter glow.',
-    src: 'walls/wall-bedroom-teal.png',
-  },
-  {
-    id: 'portrait',
-    label: 'Hallway · portrait',
-    caption: 'Vertical layout for tall screens and narrow walls.',
-    src: 'walls/wall-portrait-hall.png',
-    portrait: true,
+    caption: 'Warm night mode that doesn’t flood the room.',
+    src: 'walls/real-feel-bedroom-amber.png',
+    group: 'rooms',
   },
 ];
 
