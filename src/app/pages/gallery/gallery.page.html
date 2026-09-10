@@ -3,8 +3,8 @@
     <p class="eyebrow">On the wall</p>
     <h1>How it looks in a real home.</h1>
     <p class="lede">
-      Photos based on an actual wall install — cleaned up for clarity — plus living, dining, and bedroom scenes
-      so you can picture it in your house.
+      Original photos from an actual wall install, presented cleanly — tap any image to view it larger.
+      More room scenes below for living, dining, and bedroom.
     </p>
   </header>
 
@@ -12,13 +12,19 @@
     <h2 class="room-band__title">From a real install</h2>
     <div class="wall-grid" aria-label="Real home wall mounts">
       @for (shot of realHome; track shot.id) {
-        <figure class="wall-card">
+        <button
+          type="button"
+          class="wall-card wall-card--btn"
+          (click)="openShot(shot)"
+          [attr.aria-label]="'View larger: ' + shot.label"
+        >
           <img [src]="shot.src" [alt]="shot.label" width="1600" height="1200" loading="lazy" />
-          <figcaption>
+          <span class="wall-card__meta">
             <strong>{{ shot.label }}</strong>
             <span>{{ shot.caption }}</span>
-          </figcaption>
-        </figure>
+            <span class="wall-card__hint">Click to enlarge</span>
+          </span>
+        </button>
       }
     </div>
   </section>
@@ -27,13 +33,19 @@
     <h2 class="room-band__title">Living, dining &amp; bedroom</h2>
     <div class="wall-grid" aria-label="Room lifestyle mounts">
       @for (shot of roomScenes; track shot.id) {
-        <figure class="wall-card">
+        <button
+          type="button"
+          class="wall-card wall-card--btn"
+          (click)="openShot(shot)"
+          [attr.aria-label]="'View larger: ' + shot.label"
+        >
           <img [src]="shot.src" [alt]="shot.label" width="1600" height="900" loading="lazy" />
-          <figcaption>
+          <span class="wall-card__meta">
             <strong>{{ shot.label }}</strong>
             <span>{{ shot.caption }}</span>
-          </figcaption>
-        </figure>
+            <span class="wall-card__hint">Click to enlarge</span>
+          </span>
+        </button>
       }
     </div>
   </section>
@@ -41,17 +53,22 @@
   <section class="screens">
     <div class="screens__head">
       <h2>Real screens</h2>
-      <p>Exact captures from the display — day accents and night colors.</p>
+      <p>Exact captures from the display — day accents and night colors. Click to enlarge.</p>
     </div>
     <div class="screens__grid">
       @for (look of looks; track look.id) {
-        <figure class="screen">
+        <button
+          type="button"
+          class="screen screen--btn"
+          (click)="openLook(look)"
+          [attr.aria-label]="'View larger: ' + look.label"
+        >
           <img [src]="look.src" [alt]="look.label" width="1440" height="810" loading="lazy" />
-          <figcaption>
+          <span class="screen__meta">
             <strong>{{ look.label }}</strong>
             <span>{{ look.caption }}</span>
-          </figcaption>
-        </figure>
+          </span>
+        </button>
       }
     </div>
   </section>
@@ -105,3 +122,5 @@
     <a class="btn" [href]="wa" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
   </section>
 </main>
+
+<app-lightbox [item]="lightbox" (closed)="closeLightbox()" />

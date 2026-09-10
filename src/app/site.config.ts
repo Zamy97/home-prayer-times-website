@@ -56,29 +56,30 @@ export type WallShot = {
 };
 
 /**
- * Wall lifestyle images — polished from a real home install + clean room scenes.
- * Prefer these over older mockups for the marketing gallery.
+ * Wall lifestyle images.
+ * "home" group uses the original real-install photos (authentic look).
+ * "rooms" group uses clean lifestyle scenes for living / dining / bedroom.
  */
 export const WALL_SHOTS: WallShot[] = [
   {
     id: 'home-day',
     label: 'Real home · day',
-    caption: 'An actual wall install — day mode, clean and glanceable.',
-    src: 'walls/real-wall-day-navy.png',
+    caption: 'Day mode on the wall — how it actually looks in the house.',
+    src: 'walls/original-day.jpg',
     group: 'home',
   },
   {
     id: 'home-green',
     label: 'Real home · night green',
-    caption: 'Same wall at night with a soft green accent.',
-    src: 'walls/real-wall-night-green.png',
+    caption: 'Night green accent on the same wall mount.',
+    src: 'walls/original-green.png',
     group: 'home',
   },
   {
     id: 'home-teal',
     label: 'Real home · night teal',
-    caption: 'Teal night mode on the bedroom / hallway wall.',
-    src: 'walls/real-wall-night-teal.png',
+    caption: 'Teal night mode — same install, different color.',
+    src: 'walls/original-teal.jpg',
     group: 'home',
   },
   {

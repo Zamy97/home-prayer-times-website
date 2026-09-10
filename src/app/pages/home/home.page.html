@@ -5,7 +5,7 @@
         [src]="hero.src"
         width="1600"
         height="900"
-        alt="Home Prayer Times wall-mounted in a living room"
+        alt="Home Prayer Times wall-mounted in a real home"
         fetchpriority="high"
       />
       <div class="hero__veil"></div>
@@ -33,16 +33,16 @@
 
   <section class="feature-strip">
     <div class="feature-strip__shot">
-          <img
-            src="walls/real-feel-living-wide.png"
-            width="1600"
-            height="900"
-            alt="Home Prayer Times mounted in a living room"
-            loading="lazy"
-          />
-        </div>
-        <div class="feature-strip__copy">
-          <h2>Daylight clarity</h2>
+      <img
+        src="walls/real-feel-living-wide.png"
+        width="1600"
+        height="900"
+        alt="Home Prayer Times mounted in a living room"
+        loading="lazy"
+      />
+    </div>
+    <div class="feature-strip__copy">
+      <h2>Daylight clarity</h2>
       <p>
         Navy or green accents on a bright panel — so guests and kids can read Fajr through Isha
         without opening anything.
@@ -52,16 +52,16 @@
 
   <section class="feature-strip feature-strip--flip feature-strip--dark">
     <div class="feature-strip__shot">
-          <img
-            src="walls/real-feel-bedroom-amber.png"
-            width="1600"
-            height="900"
-            alt="Amber night mode mounted in a bedroom"
-            loading="lazy"
-          />
-        </div>
-        <div class="feature-strip__copy">
-          <h2>Night that respects the room</h2>
+      <img
+        src="walls/real-feel-bedroom-amber.png"
+        width="1600"
+        height="900"
+        alt="Amber night mode mounted in a bedroom"
+        loading="lazy"
+      />
+    </div>
+    <div class="feature-strip__copy">
+      <h2>Night that respects the room</h2>
       <p>
         After sunset it can fade to amber, LED red, green, or teal — automatic, always on, or off.
       </p>
@@ -71,15 +71,21 @@
   <section class="grid-story">
     <div class="grid-story__head">
       <h2>On your wall</h2>
-      <p>Living room. Dining room. Bedroom. See how it fits the spaces you already have.</p>
+      <p>Real home photos and room scenes — click any image to enlarge.</p>
       <a class="text-link" routerLink="/on-the-wall">Browse all rooms →</a>
     </div>
     <div class="grid-story__mosaic">
-      @for (shot of walls.slice(0, 6); track shot.id) {
-        <figure class="mosaic" [class.mosaic--portrait]="shot.portrait">
+      @for (shot of mosaic; track shot.id) {
+        <button
+          type="button"
+          class="mosaic mosaic--btn"
+          [class.mosaic--portrait]="shot.portrait"
+          (click)="openShot(shot)"
+          [attr.aria-label]="'View larger: ' + shot.label"
+        >
           <img [src]="shot.src" [alt]="shot.label" loading="lazy" />
-          <figcaption>{{ shot.label }}</figcaption>
-        </figure>
+          <span class="mosaic__label">{{ shot.label }}</span>
+        </button>
       }
     </div>
   </section>
@@ -99,7 +105,7 @@
   <section class="close">
     <div class="close__media">
       <img
-        src="walls/real-wall-night-green.png"
+        src="walls/original-green.png"
         width="1600"
         height="900"
         alt="Night green mode on a real home wall"
@@ -115,3 +121,5 @@
     </div>
   </section>
 </main>
+
+<app-lightbox [item]="lightbox" (closed)="closeLightbox()" />
