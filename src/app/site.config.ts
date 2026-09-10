@@ -3,7 +3,7 @@ export const SITE = {
   brand: 'Home Prayer Times',
   tagline: 'A wall-mounted prayer clock for the home.',
   /** Digits only, country code included. Example: 15551234567 */
-  whatsappNumber: '15551234567',
+  whatsappNumber: '15106605453',
   whatsappPrefill:
     "Assalamu alaikum — I'm interested in the Home Prayer Times display for our house.",
 } as const;
@@ -52,7 +52,7 @@ export type WallShot = {
   src: string;
   portrait?: boolean;
   /** Gallery grouping */
-  group?: 'home' | 'rooms';
+  group?: 'home' | 'rooms' | 'corner';
 };
 
 /**
@@ -60,23 +60,44 @@ export type WallShot = {
  */
 export const WALL_SHOTS: WallShot[] = [
   {
+    id: 'corner-day',
+    label: 'High mount · day',
+    caption: 'Near the ceiling — easy to read looking up from the room.',
+    src: 'walls/clean-corner-day.png',
+    group: 'corner',
+  },
+  {
+    id: 'corner-green',
+    label: 'High mount · night green',
+    caption: 'Corner near the ceiling with a soft green night accent.',
+    src: 'walls/clean-corner-green.png',
+    group: 'corner',
+  },
+  {
+    id: 'corner-amber',
+    label: 'High mount · amber',
+    caption: 'Warm amber night mode from a low looking-up angle.',
+    src: 'walls/clean-corner-amber.png',
+    group: 'corner',
+  },
+  {
     id: 'home-day',
     label: 'Living room · day',
-    caption: 'Your real day-mode display, in a clean living-room setting.',
+    caption: 'Clean living-room wall with day mode.',
     src: 'walls/clean-home-day.png',
     group: 'home',
   },
   {
     id: 'home-green',
     label: 'Evening · night green',
-    caption: 'Same mounted display with a soft green night accent.',
+    caption: 'Soft green night accent on a tidy wall.',
     src: 'walls/clean-home-green.png',
     group: 'home',
   },
   {
     id: 'home-teal',
     label: 'Hallway · night teal',
-    caption: 'Teal night mode on a tidy wall — no clutter.',
+    caption: 'Teal night mode — no clutter.',
     src: 'walls/clean-home-teal.png',
     group: 'home',
   },
