@@ -60,6 +60,13 @@ export type WallShot = {
  */
 export const WALL_SHOTS: WallShot[] = [
   {
+    id: 'corner-real-patio',
+    label: 'Real home · day corner',
+    caption: 'Actual install — high two-wall corner by the patio door.',
+    src: 'walls/real-corner-day-patio.jpg',
+    group: 'corner',
+  },
+  {
     id: 'corner-two-wall',
     label: 'High mount · two-wall corner',
     caption: 'Tucked into the ceiling corner where both walls meet.',
