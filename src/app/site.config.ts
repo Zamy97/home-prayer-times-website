@@ -60,10 +60,10 @@ export type WallShot = {
  */
 export const WALL_SHOTS: WallShot[] = [
   {
-    id: 'corner-real-patio',
-    label: 'Real home · day corner',
-    caption: 'Actual install — high two-wall corner by the patio door.',
-    src: 'walls/real-corner-day-patio.jpg',
+    id: 'corner-patio',
+    label: 'High mount · patio corner',
+    caption: 'By the sliding door — high corner, day mode, clean wall.',
+    src: 'walls/clean-corner-patio-day.png',
     group: 'corner',
   },
   {
