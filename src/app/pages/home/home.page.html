@@ -1,15 +1,5 @@
 <main class="home">
   <section class="hero" id="top">
-    <div class="hero__media" aria-hidden="false">
-      <img
-        [src]="hero.src"
-        width="1600"
-        height="900"
-        alt="Home Prayer Times wall-mounted in a real home"
-        fetchpriority="high"
-      />
-      <div class="hero__veil"></div>
-    </div>
     <div class="hero__copy">
       <p class="hero__brand reveal">{{ site.brand }}</p>
       <h1 class="reveal reveal--delay">{{ site.tagline }}</h1>
@@ -21,6 +11,20 @@
         <button class="btn btn--ghost" type="button" (click)="openAll()">See images</button>
       </div>
     </div>
+    <button
+      type="button"
+      class="hero__shot reveal reveal--delay-2"
+      (click)="openShot(hero)"
+      aria-label="View larger: wall display"
+    >
+      <img
+        [src]="hero.src"
+        width="1600"
+        height="900"
+        alt="Home Prayer Times wall-mounted in a living room, day mode"
+        fetchpriority="high"
+      />
+    </button>
   </section>
 
   <section class="statement">
