@@ -2,8 +2,8 @@
   <header class="nav" [class.nav--solid]="scrolled">
     <a class="nav__brand" routerLink="/">{{ site.brand }}</a>
     <nav class="nav__links" aria-label="Primary">
-      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Product</a>
-      <a routerLink="/on-the-wall" routerLinkActive="is-active">On the wall</a>
+      <a href="#looks">Looks</a>
+      <a href="#hardware">Hardware</a>
       <a class="nav__cta" [href]="wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </nav>
   </header>
@@ -14,8 +14,8 @@
     <div class="footer__inner">
       <span class="footer__brand">{{ site.brand }}</span>
       <div class="footer__links">
-        <a routerLink="/">Product</a>
-        <a routerLink="/on-the-wall">On the wall</a>
+        <a href="#looks">Looks</a>
+        <a href="#hardware">Hardware</a>
         <a [href]="wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
     </div>

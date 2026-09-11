@@ -18,7 +18,7 @@
       </p>
       <div class="hero__cta reveal reveal--delay-3">
         <a class="btn btn--primary" [href]="wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
-        <a class="btn btn--ghost" routerLink="/on-the-wall">See it on the wall</a>
+        <button class="btn btn--ghost" type="button" (click)="openAll()">See images</button>
       </div>
     </div>
   </section>
@@ -34,15 +34,15 @@
   <section class="feature-strip">
     <div class="feature-strip__shot">
       <img
-            src="walls/clean-living-sofa.png"
-            width="1600"
-            height="900"
-            alt="Home Prayer Times mounted in a living room"
-            loading="lazy"
-          />
-        </div>
-        <div class="feature-strip__copy">
-          <h2>Daylight clarity</h2>
+        src="walls/clean-living-sofa.png"
+        width="1600"
+        height="900"
+        alt="Home Prayer Times mounted in a living room"
+        loading="lazy"
+      />
+    </div>
+    <div class="feature-strip__copy">
+      <h2>Daylight clarity</h2>
       <p>
         Navy or green accents on a bright panel — so guests and kids can read Fajr through Isha
         without opening anything.
@@ -53,26 +53,26 @@
   <section class="feature-strip feature-strip--flip feature-strip--dark">
     <div class="feature-strip__shot">
       <img
-            src="walls/clean-bedroom-amber.png"
-            width="1600"
-            height="900"
-            alt="Amber night mode mounted in a bedroom"
-            loading="lazy"
-          />
-        </div>
-        <div class="feature-strip__copy">
-          <h2>Night that respects the room</h2>
+        src="walls/clean-bedroom-amber.png"
+        width="1600"
+        height="900"
+        alt="Amber night mode mounted in a bedroom"
+        loading="lazy"
+      />
+    </div>
+    <div class="feature-strip__copy">
+      <h2>Night that respects the room</h2>
       <p>
         After sunset it can fade to amber, LED red, green, or teal — automatic, always on, or off.
       </p>
     </div>
   </section>
 
-  <section class="grid-story">
+  <section class="grid-story" id="looks">
     <div class="grid-story__head">
-      <h2>On your wall</h2>
-      <p>Real home photos and room scenes — click any image to enlarge.</p>
-      <a class="text-link" routerLink="/on-the-wall">Browse all rooms →</a>
+      <h2>How it looks at home</h2>
+      <p>High corner mounts, living rooms, and night colors. Click any photo — then use the arrows.</p>
+      <button class="text-link" type="button" (click)="openAll()">See all images →</button>
     </div>
     <div class="grid-story__mosaic">
       @for (shot of mosaic; track shot.id) {
@@ -88,6 +88,11 @@
         </button>
       }
     </div>
+    <div class="grid-story__more">
+      <button class="btn btn--dark" type="button" (click)="openAll()">
+        See all {{ browseAll.length }} images
+      </button>
+    </div>
   </section>
 
   <section class="pillars">
@@ -100,6 +105,49 @@
         </li>
       }
     </ul>
+  </section>
+
+  <section class="hardware" id="hardware">
+    <div class="hardware__head">
+      <h2>What you’ll need</h2>
+      <p>
+        A typical wall setup uses a Raspberry Pi, monitor, speakers, and basic mounting hardware.
+        Example parts total: {{ materialsTotal }}.
+      </p>
+    </div>
+    <div class="hardware__cols">
+      <div>
+        <h3>Required</h3>
+        <ul>
+          @for (item of hardwareRequired; track item.name) {
+            <li>
+              <span class="name">
+                @if (item.href) {
+                  <a [href]="item.href" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+                } @else {
+                  {{ item.name }}
+                }
+              </span>
+              <span class="price">{{ item.price }}</span>
+              @if (item.note) {
+                <span class="note">{{ item.note }}</span>
+              }
+            </li>
+          }
+        </ul>
+      </div>
+      <div>
+        <h3>Optional</h3>
+        <ul>
+          @for (item of hardwareOptional; track item.name) {
+            <li>
+              <span class="name">{{ item.name }}</span>
+              <span class="price">{{ item.price }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="close">
