@@ -29,8 +29,8 @@ export class HomePage {
   readonly wa = whatsappUrl();
   readonly hero: WallShot = {
     id: 'hero',
-    label: 'Living room · day',
-    caption: 'The full display, glanceable from the sofa.',
+    label: 'Patio corner · day',
+    caption: 'High corner mount by the sliding door — the full display.',
     src: 'walls/hero-display-wide.png',
   };
   readonly mosaic = WALL_SHOTS.slice(0, 6);
