@@ -27,7 +27,12 @@ export class HomePage {
   readonly hardwareOptional = HARDWARE_OPTIONAL;
   readonly materialsTotal = MATERIALS_TOTAL;
   readonly wa = whatsappUrl();
-  readonly hero = WALL_SHOTS.find((s) => s.id === 'corner-day-living') ?? WALL_SHOTS[0];
+  readonly hero: WallShot = {
+    id: 'hero',
+    label: 'Living room · day',
+    caption: 'The full display, glanceable from the sofa.',
+    src: 'walls/hero-display-wide.png',
+  };
   readonly mosaic = WALL_SHOTS.slice(0, 6);
 
   readonly browseAll: LightboxItem[] = [
