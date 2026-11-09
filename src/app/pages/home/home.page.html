@@ -3,9 +3,9 @@
     <div class="hero__media">
       <img
         [src]="hero.src"
-        width="1920"
-        height="1080"
-        alt="Home Prayer Times mounted high in a home corner by the patio door"
+        width="1600"
+        height="900"
+        alt="Compact 24-inch Home Prayer Times monitor mounted high on a living-room wall"
         fetchpriority="high"
       />
       <div class="hero__veil"></div>
@@ -14,7 +14,8 @@
       <p class="hero__brand reveal">{{ site.brand }}</p>
       <h1 class="reveal reveal--delay">{{ site.tagline }}</h1>
       <p class="hero__lede reveal reveal--delay-2">
-        Prayer times, Hijri date, and a calm night mode — glanceable from across the room.
+        Prayer times, optional adhan, and masjid iqamah when your local mosque posts them —
+        on a quiet 22–24″ wall display.
       </p>
       <div class="hero__cta reveal reveal--delay-3">
         <a class="btn btn--primary" [href]="wa" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
@@ -26,26 +27,27 @@
   <section class="statement">
     <h2 class="statement__title">Designed to hang.<br />Built to stay on.</h2>
     <p class="statement__body">
-      A dedicated prayer display for the living room or bedroom — not another phone app.
-      Large type, soft night colors, and offline prayer times on a Raspberry Pi.
+      A dedicated prayer display for the living room or bedroom — not another phone app, and not a
+      giant TV. Large type on a small monitor, soft night colors, adhan audio, and offline prayer
+      times on a Raspberry Pi.
     </p>
   </section>
 
   <section class="feature-strip">
     <div class="feature-strip__shot">
       <img
-        src="walls/clean-living-sofa.png"
+        src="walls/clean-corner-patio-day.png"
         width="1600"
         height="900"
-        alt="Home Prayer Times mounted in a living room"
+        alt="Small Home Prayer Times monitor high in a patio corner"
         loading="lazy"
       />
     </div>
     <div class="feature-strip__copy">
-      <h2>Daylight clarity</h2>
+      <h2>A monitor, not a TV</h2>
       <p>
-        Navy or green accents on a bright panel — so guests and kids can read Fajr through Isha
-        without opening anything.
+        Most homes use a 22–24″ PC monitor high on the wall — readable across the room without
+        dominating it.
       </p>
     </div>
   </section>
@@ -56,7 +58,7 @@
         src="walls/clean-bedroom-amber.png"
         width="1600"
         height="900"
-        alt="Amber night mode mounted in a bedroom"
+        alt="Amber night mode on a compact bedroom wall monitor"
         loading="lazy"
       />
     </div>
@@ -68,10 +70,32 @@
     </div>
   </section>
 
+  <section class="feature-strip">
+    <div class="feature-strip__shot feature-strip__shot--ui">
+      <img
+        src="walls/real-dell-24-high.png"
+        width="1600"
+        height="900"
+        alt="Prayer starts and posted masjid iqamah on a compact wall monitor"
+        loading="lazy"
+      />
+    </div>
+    <div class="feature-strip__copy">
+      <h2>Adhan + masjid iqamah</h2>
+      <p>
+        Speakers can call the adhan at each prayer. When your local masjid posts iqamah times, those
+        show beside the home starts — so the house and the mosque stay in sync.
+      </p>
+    </div>
+  </section>
+
   <section class="grid-story" id="looks">
     <div class="grid-story__head">
       <h2>How it looks at home</h2>
-      <p>High corner mounts, living rooms, and night colors. Click any photo — then use the arrows.</p>
+      <p>
+        Compact high mounts in living rooms, dining rooms, and bedrooms — 22–24″ class monitors.
+        Click any photo, then use the arrows.
+      </p>
       <button class="text-link" type="button" (click)="openAll()">See all images →</button>
     </div>
     <div class="grid-story__mosaic">
@@ -111,8 +135,8 @@
     <div class="hardware__head">
       <h2>What you’ll need</h2>
       <p>
-        A typical wall setup uses a Raspberry Pi, monitor, speakers, and basic mounting hardware.
-        Example parts total: {{ materialsTotal }}.
+        A typical wall setup uses a Raspberry Pi, a small 22–24″ monitor, speakers for adhan, and
+        basic mounting hardware. Example parts total: {{ materialsTotal }}.
       </p>
     </div>
     <div class="hardware__cols">
@@ -153,16 +177,19 @@
   <section class="close">
     <div class="close__media">
       <img
-        src="walls/clean-home-green.png"
+        src="walls/clean-corner-patio-day.png"
         width="1600"
         height="900"
-        alt="Night green mode on a clean home wall"
+        alt="Compact Home Prayer Times monitor in a home corner"
         loading="lazy"
       />
     </div>
     <div class="close__copy">
       <h2>Want one for your home?</h2>
-      <p>Ask about setup, colors, night mode, or mounting — happy to walk you through it.</p>
+      <p>
+        Ask about a 22–24″ setup, adhan speakers, night mode, or adding your local masjid’s posted
+        iqamah — happy to walk you through it.
+      </p>
       <a class="btn btn--primary btn--lg" [href]="wa" target="_blank" rel="noopener noreferrer">
         Chat on WhatsApp
       </a>

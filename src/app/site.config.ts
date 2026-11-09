@@ -1,7 +1,7 @@
 /** Edit this before deploy — WhatsApp opens with a prefilled message. */
 export const SITE = {
   brand: 'Home Prayer Times',
-  tagline: 'A wall-mounted prayer clock for the home.',
+  tagline: 'A small wall monitor that keeps prayer times in view.',
   /** Digits only, country code included. Example: 15551234567 */
   whatsappNumber: '15106605453',
   whatsappPrefill:
@@ -21,27 +21,27 @@ export type Feature = {
 export const FEATURES: Feature[] = [
   {
     title: 'Live clock & countdown',
-    body: 'A large, glanceable clock with seconds, plus a clear countdown to the next prayer.',
+    body: 'A glanceable clock with seconds, plus a clear countdown to the next prayer.',
   },
   {
-    title: 'Five daily prayers',
-    body: 'Fajr through Isha highlighted as the next one approaches — and a short cue when it’s time.',
+    title: 'Adhan at each prayer',
+    body: 'Optional speakers play the adhan when it’s time — same Pi, same house location.',
+  },
+  {
+    title: 'Masjid iqamah when posted',
+    body: 'If your local masjid publishes iqamah, the board can show those times beside the home starts.',
   },
   {
     title: 'Hijri & Gregorian',
     body: 'Both calendars side by side so the date feels familiar for the whole family.',
   },
   {
-    title: 'Sunrise & sunset',
-    body: 'Daily sun times shown large — useful every day, not just Fridays.',
-  },
-  {
     title: 'Night mode',
     body: 'Automatic after sunset, always on, or off. Soft amber, LED red, green, teal, and more.',
   },
   {
-    title: 'Runs offline',
-    body: 'Prayer times are calculated on the device. Ideal for a Raspberry Pi kiosk that stays on all day.',
+    title: 'Small monitor, always on',
+    body: 'Built for a 22–24″ display on a Raspberry Pi — not a living-room TV, and it stays on all day.',
   },
 ];
 
@@ -60,30 +60,37 @@ export type WallShot = {
  */
 export const WALL_SHOTS: WallShot[] = [
   {
+    id: 'real-dell-24',
+    label: 'Real install · ~24″ monitor',
+    caption: 'A compact Dell monitor high on the wall — not a big TV. Day mode with local masjid iqamah.',
+    src: 'walls/real-dell-24-high.png',
+    group: 'corner',
+  },
+  {
     id: 'corner-patio',
     label: 'High mount · patio corner',
-    caption: 'By the sliding door — high corner, day mode, clean wall.',
+    caption: 'A small wall monitor by the sliding door — high corner, day mode.',
     src: 'walls/clean-corner-patio-day.png',
     group: 'corner',
   },
   {
     id: 'corner-two-wall',
     label: 'High mount · two-wall corner',
-    caption: 'Tucked into the ceiling corner where both walls meet.',
+    caption: 'Tucked into the ceiling corner — 22–24″ class display.',
     src: 'walls/clean-corner-two-wall-day.png',
     group: 'corner',
   },
   {
     id: 'corner-day-living',
-    label: 'High mount · day living room',
-    caption: 'Near the ceiling above the sofa — day mode, clean install.',
+    label: 'High mount · living room',
+    caption: 'Near the ceiling above the sofa — compact, always on.',
     src: 'walls/clean-corner-day-living.png',
     group: 'corner',
   },
   {
     id: 'corner-day-bright',
     label: 'High mount · bright day',
-    caption: 'Looking up from the room in daylight — no cables.',
+    caption: 'Looking up from the room — small panel, readable type.',
     src: 'walls/clean-corner-day-bright.png',
     group: 'corner',
   },
@@ -111,7 +118,7 @@ export const WALL_SHOTS: WallShot[] = [
   {
     id: 'home-day',
     label: 'Living room · day',
-    caption: 'Clean living-room wall with day mode.',
+    caption: 'A tidy wall with a small prayer display in day mode.',
     src: 'walls/clean-home-day.png',
     group: 'home',
   },
@@ -132,7 +139,7 @@ export const WALL_SHOTS: WallShot[] = [
   {
     id: 'living-sofa',
     label: 'Living room · sofa view',
-    caption: 'Glanceable from across the couch.',
+    caption: 'Glanceable from the couch — still a compact wall monitor.',
     src: 'walls/clean-living-sofa.png',
     group: 'rooms',
   },
@@ -212,7 +219,11 @@ export type HardwareItem = {
 };
 
 export const HARDWARE_REQUIRED: HardwareItem[] = [
-  { name: 'Monitor / TV (22–32″)', price: '$100–150' },
+  {
+    name: 'Monitor (22–24″)',
+    price: '$80–150',
+    note: 'A compact PC monitor — not a living-room TV',
+  },
   {
     name: 'Raspberry Pi 4 (4 GB)',
     price: '~$100',
@@ -223,8 +234,12 @@ export const HARDWARE_REQUIRED: HardwareItem[] = [
   { name: 'Official Pi power supply (USB-C, 5V 3A)', price: '$10–15' },
   { name: 'HDMI cable', price: '$8–15' },
   { name: 'Pi case (with ventilation)', price: '$5–15' },
-  { name: 'Small USB speakers', price: '$15–35' },
-  { name: 'Wall mount (VESA or TV mount)', price: '$15–35' },
+  {
+    name: 'Small USB or 3.5mm speakers',
+    price: '$15–35',
+    note: 'For optional adhan at each prayer',
+  },
+  { name: 'Wall mount (VESA for a small monitor)', price: '$15–35' },
   { name: 'Power cable / extension for monitor', price: '$8–15' },
   {
     name: '12 ft extension cord (multi-outlet)',

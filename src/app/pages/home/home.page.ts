@@ -27,12 +27,7 @@ export class HomePage {
   readonly hardwareOptional = HARDWARE_OPTIONAL;
   readonly materialsTotal = MATERIALS_TOTAL;
   readonly wa = whatsappUrl();
-  readonly hero: WallShot = {
-    id: 'hero',
-    label: 'Patio corner · day',
-    caption: 'High corner mount by the sliding door — the full display.',
-    src: 'walls/hero-display-wide.png',
-  };
+  readonly hero: WallShot = WALL_SHOTS[0];
   readonly mosaic = WALL_SHOTS.slice(0, 6);
 
   readonly browseAll: LightboxItem[] = [
